@@ -23,17 +23,17 @@ int main()
             {
                 mul *= arr[j];
                 //mul *= mul;
-                s5 += mul;
-                ++sum;
-                ++sum;
-                ++sum;
-                ++sum;
-                ++sum;
-                ++sum;
-                ++sum;
-                ++sum;
-                ++sum;
-                ++sum; //comment the sums to see the effect of oooe
+                //s5 += mul;
+                //++sum;
+                //++sum;
+                //++sum;
+                //++sum;
+                //++sum;
+                //++sum;
+                //++sum;
+                //++sum;
+                //++sum;
+                //++sum; //comment the sums to see the effect of oooe
             }
         }
         s1 += s2 + s3 + s4 + s5 + s6 + s7 + s8 + mul + sum;
