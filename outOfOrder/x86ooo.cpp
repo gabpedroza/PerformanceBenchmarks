@@ -14,6 +14,7 @@ int main()
             arr[i] = rand();
         }
         int s1 = 0, s2 = 0, s3 = 0, s4 = 0, s5 = 0, s6 = 0, s7 = 0, s8 = 0, s9 = 0;
+        int sum = 0;
         int mul = 1;
         auto ini = chrono::high_resolution_clock::now();
         for (int i = 0; i < mult; ++i)
@@ -23,15 +24,19 @@ int main()
                 mul *= arr[j];
                 //mul *= mul;
                 s5 += mul;
-                s1 += arr[j];
-                s2 += s1;
-                s3 += s2;
-                s4 += s3; //commenting the sums has no effect because they are executed out of order (i.e. dont wait for mul)
-                            //s5 has no effect either because of superscalar execution
-
+                ++sum;
+                ++sum;
+                ++sum;
+                ++sum;
+                ++sum;
+                ++sum;
+                ++sum;
+                ++sum;
+                ++sum;
+                ++sum; //comment the sums to see the effect of oooe
             }
         }
-        s1 += s2 + s3 + s4 + s5 + s6 + s7 + s8 + mul;
+        s1 += s2 + s3 + s4 + s5 + s6 + s7 + s8 + mul + sum;
         auto end = chrono::high_resolution_clock::now();
         printf("%d %ld\n", s1, chrono::duration_cast<chrono::nanoseconds>(end - ini));
     }
